@@ -21,7 +21,6 @@ mvn -f complete/pom.xml versions:set -DnewVersion=$nextSnapshotVersion versions:
 #git push origin master
 #echo "The version is bumped to next release version $nextSnapshotVersion"
 fi
-#git config remote.origin.url "https://Rajdash:raj12345@github.com/Rajdash/gs-serving-web-content.git"
 git add complete/pom.xml
 git commit -m "commiting new tag"
 git push origin $currentVersion-tag 

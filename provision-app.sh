@@ -1,7 +1,7 @@
 #!/bin/bash
 BUILD_NUMBER=$1
 docker build -t rajranjan/gs-serving-web-content:v_${BUILD_NUMBER} .
-docker login -u rajranjan -p Rajranjan123
+docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
 docker push rajranjan/gs-serving-web-content:v_${BUILD_NUMBER}
 sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g" my-poc.json > my-poc-v_${BUILD_NUMBER}.json
 aws ecs register-task-definition --family gs-serving-web-content --cli-input-json file://my-poc-v_${BUILD_NUMBER}.json
