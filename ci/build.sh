@@ -3,7 +3,7 @@
 set -e -x
 
 cd source-code
-  mvn clean package
+  ./source-code/complete/mvnw clean package
 cd ..
 
-cp source-code/target/concourse-maven-cf-simple-0.0.1-SNAPSHOT.jar  build-output/.
+cp source-code/complete/target/gs-serving-web-content-1.4-SNAPSHOT.jar  build-output/.
