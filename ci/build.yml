@@ -14,4 +14,6 @@ outputs:
   - name: build-output
 
 run:
-  path: ./source-code/ci/build.sh
+  path: 
+   chmod 755 /source-code/ci/build.sh
+  ./source-code/ci/build.sh
